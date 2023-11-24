@@ -1,4 +1,8 @@
-
 .homeHeader {
   display: flex;
+}
+
+.pillarsCards {
+  display: flex;
+  justify-content: space-around;
 }
