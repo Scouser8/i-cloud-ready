@@ -1,0 +1,18 @@
+.root {
+  height: 90px;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+.welcomeTitle {
+  margin-left: 40px;
+}
+
+.welcomeText {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.welcomeTextInfo {
+  font-size: 16px;
+}
