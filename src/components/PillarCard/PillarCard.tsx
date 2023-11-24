@@ -16,8 +16,6 @@ export default function PillarCard(props: Props) {
   const { pillar } = props;
   const { src, description, title, className = "", dtsu } = pillar;
   const [{ cartItems, kitchenItems }, dispatch] = useStateValue();
-  console.log("cartItems", cartItems);
-  console.log("kitchenItems", kitchenItems);
   const pillarAddedToCart = cartItems?.find(
     (pillar: Pillar) => pillar.title === title
   );

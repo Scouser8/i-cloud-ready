@@ -8,9 +8,8 @@ const addToCart = (pillar: Pillar) => ({
   payload: pillar,
 });
 
-const checkout = (pillar: Pillar) => ({
+const checkout = () => ({
   type: CHECKOUT,
-  payload: pillar,
 });
 
 export { addToCart, checkout };

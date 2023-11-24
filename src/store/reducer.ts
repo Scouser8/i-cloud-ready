@@ -27,7 +27,7 @@ const reducer = (state: ApplicationState, action: Action) => {
       return {
         ...state,
         cartItems: [],
-        kitchenItems: [...state.kitchenItems, ...action.payload],
+        kitchenItems: [...state.kitchenItems, ...state.cartItems],
       };
 
     default:
