@@ -1,0 +1,10 @@
+.root {
+  width: 270px;
+  height: 360px;
+  padding: 20px 5px;
+}
+
+.cardImage {
+  height: 135px;
+  object-fit: contain;
+}

@@ -7,7 +7,7 @@ const { Title } = Typography;
 
 export default function HomePage() {
   return (
-    <div>
+    <div className={styles.homeContainer}>
       <div className={styles.homeHeader}>
         <Title level={3}>Get Support</Title>
         <Image

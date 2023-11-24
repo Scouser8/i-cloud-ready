@@ -1,5 +1,5 @@
 import { Card } from "antd";
-import Image from "next/image";
+import styles from "@/styles/PillarCard.module.css";
 
 const { Meta } = Card;
 
@@ -15,8 +15,8 @@ export default function PillarCard(props: Props) {
   return (
     <Card
       hoverable
-      style={{ width: 270, height: 360 }}
-      cover={<img style={{ height: 135 }} alt={alt} src={src} />}
+      className={styles.root}
+      cover={<img className={styles.cardImage} alt={alt} src={src} />}
     >
       <Meta title={title} description={description} />
     </Card>

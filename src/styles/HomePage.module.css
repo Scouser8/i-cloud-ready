@@ -1,8 +1,21 @@
+.homeContainer {
+  padding: 50px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #97e0f3 50%,
+    #093e7b 50%,
+    #00244d 80%
+  );
+}
+
 .homeHeader {
   display: flex;
+  align-content: center;
 }
 
 .pillarsCards {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-top: 20px;
 }
