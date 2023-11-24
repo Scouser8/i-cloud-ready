@@ -1,6 +1,7 @@
+import { Pillar } from "@/types";
 import PillarCard from "../PillarCard";
 
-const pillarCards = [
+const pillarCards : Pillar[] = [
   {
     src: "customer-engagement.png",
     title: "Mobile Apps",

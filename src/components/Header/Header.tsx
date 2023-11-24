@@ -1,9 +1,11 @@
 import styles from "@/styles/Header.module.css";
 import { Typography } from "antd";
 import { Avatar, Badge } from "antd";
-import { ShopFilled } from "@ant-design/icons";
+import { ShoppingCartOutlined, ShopFilled } from "@ant-design/icons";
+import { useStateValue } from "@/store/StateProvider";
 
 export default function Header() {
+  const [{ cartItems, kitchenItems }] = useStateValue();
   return (
     <div className={styles.root}>
       <div className={styles.welcomeTitle}>
@@ -16,10 +18,10 @@ export default function Header() {
       </div>
       <div className={styles.headerInfo}>Some Info</div>
       <div className={styles.actionButtons}>
-        <Badge count={2} showZero>
-          <Avatar size="large" icon={<ShopFilled />} />
+        <Badge count={cartItems.length} showZero>
+          <Avatar size="large" icon={<ShoppingCartOutlined />} />
         </Badge>
-        <Badge count={2} showZero>
+        <Badge count={kitchenItems.length} showZero>
           <Avatar size="large" icon={<ShopFilled />} />
         </Badge>
       </div>
