@@ -1,10 +1,63 @@
 .root {
+  display: flex;
+  flex-direction: column;
   width: 270px;
   height: 360px;
-  padding: 20px 5px;
+  padding-top: 32px;
 }
 
 .cardImage {
   height: 135px;
   object-fit: contain;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  height: 100%;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+.cardContent h5,
+.cardContent span {
+  color: #ffffff;
+}
+
+.mobile-card {
+  background-color: #0a488f;
+}
+.bi-card {
+  background-color: #579064;
+}
+.hr-card {
+  background-color: #950000;
+}
+.operations-card {
+  background-color: #8f6c0a;
+}
+
+.cardFooter {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardFooter span {
+  font-size: 17px;
+}
+
+.actionIcons {
+  display: flex;
+  gap: 8px;
+}
+
+.icon {
+  color: #ffffff;
+  background-color: black;
+  opacity: 0.3;
+  padding: 9px;
+  border-radius: 50%;
+  font-size: 16px;
 }

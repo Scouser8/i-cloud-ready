@@ -11,6 +11,7 @@ const nextConfig = {
     "antd",
     "rc-pagination",
     "rc-picker",
+    "clsx",
   ],
 };
 
