@@ -5,6 +5,7 @@ import { ShoppingCartOutlined, ShopFilled } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { useStateValue } from "@/store/StateProvider";
 import { checkout } from "@/actions";
+import Link from "next/link";
 
 export default function Header() {
   const [{ cartItems, kitchenItems }, dispatch] = useStateValue();
@@ -34,14 +35,16 @@ export default function Header() {
   );
   return (
     <div className={styles.root}>
-      <div className={styles.welcomeTitle}>
-        <Typography className={styles.welcomeText}>
-          Welcome to My Company!
-        </Typography>
-        <Typography className={styles.welcomeTextInfo}>
-          You have started your 30 day trial
-        </Typography>
-      </div>
+      <Link href="/">
+        <div className={styles.welcomeTitle}>
+          <Typography className={styles.welcomeText}>
+            Welcome to My Company!
+          </Typography>
+          <Typography className={styles.welcomeTextInfo}>
+            You have started your 30 day trial
+          </Typography>
+        </div>
+      </Link>
       <div className={styles.headerInfo}>
         <Typography style={{ fontSize: 20 }}>
           Our architects are here to help

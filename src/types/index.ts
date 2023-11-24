@@ -1,7 +1,11 @@
 export type Pillar = {
-  src: string;
   title: string;
   description: string;
-  className: string;
   dtsu: string;
+};
+
+export type PillarCardMeta = Pillar & {
+  src: string;
+  path: string;
+  className: string;
 };

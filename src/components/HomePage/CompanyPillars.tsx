@@ -1,13 +1,14 @@
-import { Pillar } from "@/types";
+import { Pillar, PillarCardMeta } from "@/types";
 import PillarCard from "../PillarCard";
 
-const pillarCards: Pillar[] = [
+const pillarCards: PillarCardMeta[] = [
   {
     src: "customer-engagement.png",
     title: "Mobile Apps",
     description: "Get your own mobile app",
     className: "mobile-card",
     dtsu: "100",
+    path: "/mobile-apps",
   },
   {
     src: "actionable-insights.png",
@@ -15,6 +16,7 @@ const pillarCards: Pillar[] = [
     description: "Create Dashboards",
     className: "bi-card",
     dtsu: "100",
+    path: "/bi",
   },
   {
     src: "employees-productivity.png",
@@ -22,6 +24,7 @@ const pillarCards: Pillar[] = [
     description: "Talents",
     className: "hr-card",
     dtsu: "50",
+    path: "/hr",
   },
   {
     src: "operations-excellence.png",
@@ -29,6 +32,7 @@ const pillarCards: Pillar[] = [
     description: "ERP Management",
     className: "operations-card",
     dtsu: "100",
+    path: "/operations",
   },
 ];
 
