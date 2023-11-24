@@ -25,7 +25,10 @@ export default function PillarCard(props: Props) {
   );
   const pillarCanBeAddedToCart = !(pillarAddedToCart || pillarAddedToCheckout);
 
-  const handleAddToCheckout = () => dispatch(addToCart(pillar));
+  const handleAddToCheckout = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    dispatch(addToCart(pillar));
+  };
 
   return (
     <Link href={`${path}?title=${title}`}>
@@ -56,6 +59,7 @@ export default function PillarCard(props: Props) {
                 shape="circle"
                 icon={<ExportOutlined />}
                 className={styles.actionButton}
+                onClick={(e) => e.preventDefault()}
               />
             </div>
           </div>
