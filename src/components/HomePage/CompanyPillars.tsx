@@ -1,7 +1,7 @@
 import { Pillar } from "@/types";
 import PillarCard from "../PillarCard";
 
-const pillarCards : Pillar[] = [
+const pillarCards: Pillar[] = [
   {
     src: "customer-engagement.png",
     title: "Mobile Apps",
@@ -33,5 +33,5 @@ const pillarCards : Pillar[] = [
 ];
 
 export default function CompanyPillars() {
-  return pillarCards.map((props) => <PillarCard {...props} />);
+  return pillarCards.map((pillar) => <PillarCard pillar={pillar} />);
 }

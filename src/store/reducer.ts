@@ -1,4 +1,4 @@
-import { UPDATE_CART, CHECKOUT } from "@/actions";
+import { ADD_TO_CART, CHECKOUT } from "@/actions";
 import { Pillar } from "@/types";
 
 type ApplicationState = {
@@ -17,10 +17,10 @@ export const initialState: ApplicationState = {
 
 const reducer = (state: ApplicationState, action: Action) => {
   switch (action.type) {
-    case UPDATE_CART:
+    case ADD_TO_CART:
       return {
         ...state,
-        cartItems: action.payload,
+        cartItems: [...state.cartItems, action.payload],
       };
 
     case CHECKOUT:

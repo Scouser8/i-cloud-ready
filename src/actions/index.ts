@@ -1,16 +1,16 @@
 import { Pillar } from "@/types";
 
-export const UPDATE_CART = "UPDATE_CART";
+export const ADD_TO_CART = "ADD_TO_CART";
 export const CHECKOUT = "CHECKOUT";
 
-const updateCart = (pillars: Pillar[]) => ({
-  type: UPDATE_CART,
-  payload: pillars,
+const addToCart = (pillar: Pillar) => ({
+  type: ADD_TO_CART,
+  payload: pillar,
 });
 
-const checkout = (pillars: Pillar[]) => ({
+const checkout = (pillar: Pillar) => ({
   type: CHECKOUT,
-  payload: pillars,
+  payload: pillar,
 });
 
-export { updateCart, checkout };
+export { addToCart, checkout };

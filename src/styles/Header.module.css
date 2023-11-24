@@ -27,3 +27,14 @@
   display: flex;
   gap: 12px;
 }
+
+.bagde > sup {
+  color: #4a6585 !important;
+  background-color: #ffd900 !important;
+}
+
+.actionButton {
+  color: #4a6585;
+  background-color: #e1ecf9;
+  border: none;
+}

@@ -1,34 +1,39 @@
-import { Card, Typography } from "antd";
+import { Button, Card, Typography } from "antd";
 import { PlusOutlined, ExportOutlined } from "@ant-design/icons";
 import { clsx } from "clsx";
 import styles from "@/styles/PillarCard.module.css";
+import { useStateValue } from "@/store/StateProvider";
+import { Pillar } from "@/types";
+import { addToCart } from "@/actions";
 
 const { Text, Title } = Typography;
 
 type Props = {
-  src: string;
-  alt?: string;
-  title: string;
-  description: string;
-  className?: string;
-  dtsu: string;
+  pillar: Pillar;
 };
 
 export default function PillarCard(props: Props) {
-  const {
-    src,
-    alt = "pillar-card",
-    description,
-    title,
-    className = "",
-    dtsu,
-  } = props;
+  const { pillar } = props;
+  const { src, description, title, className = "", dtsu } = pillar;
+  const [{ cartItems, kitchenItems }, dispatch] = useStateValue();
+  console.log("cartItems", cartItems);
+  console.log("kitchenItems", kitchenItems);
+  const pillarAddedToCart = cartItems?.find(
+    (pillar: Pillar) => pillar.title === title
+  );
+  const pillarAddedToCheckout = kitchenItems?.find(
+    (pillar: Pillar) => pillar.title === title
+  );
+  const pillarCanBeAddedToCart = !(pillarAddedToCart || pillarAddedToCheckout);
+
+  const handleAddToCheckout = () => dispatch(addToCart(pillar));
+
   return (
     <Card
       size="small"
       hoverable
       className={styles.root}
-      cover={<img className={styles.cardImage} alt={alt} src={src} />}
+      cover={<img className={styles.cardImage} alt='"pillar-card"' src={src} />}
     >
       <div className={clsx(styles.cardContent, styles[className])}>
         <Title level={5}>{title}</Title>
@@ -36,8 +41,20 @@ export default function PillarCard(props: Props) {
         <div className={styles.cardFooter}>
           <Text>{`${dtsu} DTSU*`}</Text>
           <div className={styles.actionIcons}>
-            <PlusOutlined className={styles.icon} />
-            <ExportOutlined className={styles.icon} />
+            <Button
+              disabled={!pillarCanBeAddedToCart}
+              size="large"
+              shape="circle"
+              icon={<PlusOutlined />}
+              className={styles.actionButton}
+              onClick={handleAddToCheckout}
+            />
+            <Button
+              size="large"
+              shape="circle"
+              icon={<ExportOutlined />}
+              className={styles.actionButton}
+            />
           </div>
         </div>
       </div>

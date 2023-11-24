@@ -1,6 +1,6 @@
 import styles from "@/styles/Header.module.css";
 import { Typography } from "antd";
-import { Avatar, Badge } from "antd";
+import { Button, Badge } from "antd";
 import { ShoppingCartOutlined, ShopFilled } from "@ant-design/icons";
 import { useStateValue } from "@/store/StateProvider";
 
@@ -18,11 +18,31 @@ export default function Header() {
       </div>
       <div className={styles.headerInfo}>Some Info</div>
       <div className={styles.actionButtons}>
-        <Badge count={cartItems.length} showZero>
-          <Avatar size="large" icon={<ShoppingCartOutlined />} />
+        <Badge
+          count={cartItems.length}
+          showZero
+          offset={[-35, 10]}
+          className={styles.bagde}
+        >
+          <Button
+            size="large"
+            shape="circle"
+            icon={<ShoppingCartOutlined />}
+            className={styles.actionButton}
+          />
         </Badge>
-        <Badge count={kitchenItems.length} showZero>
-          <Avatar size="large" icon={<ShopFilled />} />
+        <Badge
+          count={kitchenItems.length}
+          showZero
+          offset={[-35, 10]}
+          className={styles.bagde}
+        >
+          <Button
+            size="large"
+            shape="circle"
+            icon={<ShopFilled />}
+            className={styles.actionButton}
+          />
         </Badge>
       </div>
     </div>

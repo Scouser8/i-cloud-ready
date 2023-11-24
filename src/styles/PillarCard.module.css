@@ -53,6 +53,11 @@
   gap: 8px;
 }
 
+.actionButton {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
 .icon {
   color: #ffffff;
   background-color: black;
